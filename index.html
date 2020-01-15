@@ -8,28 +8,6 @@
 
     <title>Kalkulator</title>
 
-    <script>
-        function kalkulator(){
-    
-    var broj1 = parseFloat(document.getElementById("broj1").value);
-    var broj2 = parseFloat(document.getElementById("broj2").value);
-    var op = document.getElementById("operatori").value;
-    
-    if (op === "sabiranje") {
-        document.getElementById("rezultat").value = broj1 + broj2;
-    }
-    if (op === "oduzimanje") {
-        document.getElementById("rezultat").value = broj1 - broj2;
-    }
-    if (op === "mnozenje") {
-        document.getElementById("rezultat").value = broj1 * broj2;
-    }
-    if (op === "deljenje") {
-        document.getElementById("rezultat").value = broj1 / broj2;
-    }
-    }
-    </script>
-
 </head>
 
 
@@ -50,8 +28,33 @@ Broj 2: <input type="text" id = "broj2" maxlength="5"><br></br>
 <input type = "submit" value="=" onclick="kalkulator();">
 <br></br>
 
-Rezultat: <input type="text" id = "rezultat"><br></br>
+<p id = "rezultat">Rezultat:</p><br></br>
 
 </body>
+
+<script>
+        function kalkulator(){
+    
+    var broj1 = parseFloat(document.getElementById("broj1").value);
+    var broj2 = parseFloat(document.getElementById("broj2").value);
+    var op = document.getElementById("operatori").value;
+
+    var rezultat = 0;
+    
+    if (op === "sabiranje") {
+        rezultat = broj1 + broj2;
+    }
+    if (op === "oduzimanje") {
+        rezultat = broj1 - broj2;
+    }
+    if (op === "mnozenje") {
+        rezultat = broj1 * broj2;
+    }
+    if (op === "deljenje") {
+        rezultat = broj1 / broj2;
+    }
+    document.getElementById('rezultat').innerHTML = "Rezultat: " + rezultat;
+    }
+    </script>
 
 </html>
