@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Kalkulator</title>
+
+    <script>
+        function kalkulator(){
+    
+    var broj1 = parseFloat(document.getElementById("broj1").value);
+    var broj2 = parseFloat(document.getElementById("broj2").value);
+    var op = document.getElementById("operatori").value;
+    
+    if (op === "sabiranje") {
+        document.getElementById("rezultat").value = broj1 + broj2;
+    }
+    if (op === "oduzimanje") {
+        document.getElementById("rezultat").value = broj1 - broj2;
+    }
+    if (op === "mnozenje") {
+        document.getElementById("rezultat").value = broj1 * broj2;
+    }
+    if (op === "deljenje") {
+        document.getElementById("rezultat").value = broj1 / broj2;
+    }
+    }
+    </script>
+
+</head>
+
+
+<body>
+
+<h2>JavaScript kalkulator</h2>
+
+Broj 1: <input type="text" id = "broj1" maxlength="5">
+<br></br>
+Broj 2: <input type="text" id = "broj2" maxlength="5"><br></br>
+
+<select id="operatori">
+<option value="sabiranje">Sabiranje</option>
+<option value="oduzimanje">Oduzimanje</option>
+<option value="mnozenje">Mnozenje</option>
+<option value="deljenje">Deljenje</option>
+</select><br></br>
+<input type = "submit" value="=" onclick="kalkulator();">
+<br></br>
+
+Rezultat: <input type="text" id = "rezultat"><br></br>
+
+</body>
+
+</html>
